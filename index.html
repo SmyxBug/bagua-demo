@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <!-- 此mate标签含义：内容宽度等于设备宽度 1倍大小 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的第一个页面</title>
+    <style>
+        body {
+            background: #ddd;
+        }
+        * {
+            box-sizing: border-box; /* 盒模型 */
+            padding: 0;
+            margin: 0;
+        }
+        @keyframes x {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        #bagua {
+            /* border: 1px solid black; */
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden; /* 超过我的边界部分删除: 隐藏多余的内容 */
+            animation: x 5s linear infinite; /* css3 绑定动画效果 x：一个动画效果 5s：5秒 linear：线性 infinite：循环 */
+            box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.75); /* 动画效果加阴影特效 */
+        }
+        /*手机端css*/
+        @media (max-width: 500px) {
+            #bagua {
+                width: 200px;
+                height: 200px;
+            }
+        }
+        #bagua>div:first-child {
+            /* border: 1px solid green; */
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            background-color: black;
+        }
+        #bagua>div:nth-child(2) {
+            /* border: 1px solid blue; */
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            background-color: white;
+        }
+        #bagua>div:nth-child(3) {
+            /* border: 5px solid red; */
+            position: absolute;
+            width: 200px;
+            height: 50%;
+            background-color: black;
+            left: 50%;
+            margin-left: -100px;
+            border-radius: 50%;
+        }
+        /*手机端css*/
+        @media (max-width: 500px) {
+            #bagua>div:nth-child(3) {
+                width: 100px;
+                margin-left: -50px;
+            }
+        }
+        #bagua>div:nth-child(4) {
+            /* border: 5px solid red; */
+            position: absolute;
+            width: 200px;
+            height: 50%;
+            background-color: white;
+            left: 50%;
+            margin-left: -100px;
+            bottom: 0; /* margin-top: 50%; */
+            border-radius: 50%;
+        }
+        /*手机端css*/
+        @media (max-width: 500px) {
+            #bagua>div:nth-child(4) {
+                width: 100px;
+                margin-left: -50px;
+            }
+        }
+        #bagua>div:nth-child(5) {
+            /* border: 5px solid red; */
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: white;
+            left: 50%;
+            margin-left: -15px;
+            margin-top: 75px;
+            border-radius: 50%;
+        }
+        /*手机端css*/
+        @media (max-width: 500px) {
+            #bagua>div:nth-child(5) {
+                width: 15px;
+                height: 15px;
+                margin-left: -7.5px;
+                margin-top: 37.5px;
+            }
+        }
+        #bagua>div:nth-child(6) {
+            /* border: 5px solid red; */
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: black;
+            bottom: 75px;
+            left: 50%;
+            margin-left: -15px;
+            border-radius: 50%;
+        }
+        /*手机端css*/
+        @media (max-width: 500px) {
+            #bagua>div:nth-child(6) {
+                width: 15px;
+                height: 15px;
+                bottom: 37.5px;
+                margin-left: -7.5px;
+            }
+        }
+        #bagua-wrapper {
+            /* border: 10px solid red; */
+            height: 100vh; /* vh：viewpoint height 即100份的可视高度 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div id="bagua-wrapper">
+        <div id="bagua">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div style="margin-top: 1em;"> <!-- em：表示一个字符的宽度 约等于16px -->
+            道可道,非常道
+        </div>
+    </div>
+</body>
+</html>
